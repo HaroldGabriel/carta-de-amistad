@@ -86,7 +86,7 @@ const Index = () => {
                 transition={{ delay: 0.8 }}
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800"
               >
-                Querida Nicol
+                Querida Melany
               </motion.h1>
 
               <motion.div
