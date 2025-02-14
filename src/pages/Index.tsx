@@ -16,14 +16,45 @@ const Index = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-white rounded-xl shadow-xl p-8 cursor-pointer"
             onClick={() => setIsOpen(true)}
+            className="cursor-pointer group"
           >
-            <div className="flex flex-col items-center space-y-4">
-              <Mail className="w-16 h-16 sm:w-24 sm:h-24 text-friendship animate-float" />
-              <p className="text-friendship-dark text-lg sm:text-xl font-medium">
-                Toca para abrir
-              </p>
+            <div className="relative w-[280px] sm:w-[320px]">
+              {/* Sobre principal */}
+              <div className="bg-white shadow-xl aspect-[1.4/1] rounded-lg relative overflow-hidden">
+                {/* Solapa superior */}
+                <motion.div 
+                  className="absolute top-0 left-0 w-full h-1/2 bg-white origin-bottom"
+                  initial={{ rotateX: 0 }}
+                  animate={{ rotateX: -10 }}
+                  whileHover={{ rotateX: -30 }}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    zIndex: 2,
+                    borderBottom: '1px solid #e5e7eb'
+                  }}
+                >
+                  <div 
+                    className="absolute bottom-0 left-0 w-full h-full bg-white"
+                    style={{
+                      clipPath: 'polygon(0 100%, 50% 0, 100% 100%)'
+                    }}
+                  />
+                </motion.div>
+                
+                {/* Contenido del sobre */}
+                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4">
+                  <Mail className="w-16 h-16 sm:w-20 sm:h-20 text-friendship animate-float" />
+                  <p className="text-friendship-dark text-lg sm:text-xl font-medium">
+                    Toca para abrir
+                  </p>
+                </div>
+
+                {/* Sombras laterales para efecto 3D */}
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-transparent to-gray-100" />
+                <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-r from-transparent to-gray-100" />
+                <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-l from-transparent to-gray-100" />
+              </div>
             </div>
           </motion.div>
         ) : (
