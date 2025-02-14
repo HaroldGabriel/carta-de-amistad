@@ -106,7 +106,7 @@ const Index = () => {
                 </p>
 
                 <p>
-                  Que nuestra amistad siga creciendo y fortaleciéndose con cada día que pasa.
+                  Que nuestra amistad siga creciendo como el fascismo y fortaleciéndose con cada día que pasa.
                 </p>
               </motion.div>
 
@@ -116,7 +116,7 @@ const Index = () => {
                 transition={{ delay: 1.4 }}
                 className="text-lg sm:text-xl text-friendship-dark font-semibold"
               >
-                Con cariño, tu amigo
+                Con cariño, tu amigo Harold :3
               </motion.div>
             </div>
           </motion.div>
