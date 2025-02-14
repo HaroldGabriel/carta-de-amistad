@@ -1,4 +1,3 @@
-
 import { motion, AnimatePresence } from "framer-motion";
 import { HeartHandshake, Mail } from "lucide-react";
 import { useState } from "react";
@@ -21,39 +20,34 @@ const Index = () => {
           >
             <div className="relative w-[280px] sm:w-[320px]">
               {/* Sobre principal */}
-              <div className="bg-white shadow-xl aspect-[1.4/1] rounded-lg relative overflow-hidden">
-                {/* Solapa superior */}
-                <motion.div 
-                  className="absolute top-0 left-0 w-full h-1/2 bg-white origin-bottom"
-                  initial={{ rotateX: 0 }}
-                  animate={{ rotateX: -10 }}
-                  whileHover={{ rotateX: -30 }}
+              <div className="bg-[#FFDEE2] shadow-xl aspect-[1.6/1] rounded-lg relative overflow-hidden">
+                {/* Líneas diagonales del sobre */}
+                <div 
+                  className="absolute top-0 left-0 w-full h-full z-10"
                   style={{
-                    transformStyle: 'preserve-3d',
-                    zIndex: 2,
-                    borderBottom: '1px solid #e5e7eb'
+                    background: 'linear-gradient(315deg, transparent 49.5%, #ffcbd1 49.5%, #ffcbd1 50.5%, transparent 50.5%), linear-gradient(45deg, transparent 49.5%, #ffcbd1 49.5%, #ffcbd1 50.5%, transparent 50.5%)'
                   }}
-                >
-                  <div 
-                    className="absolute bottom-0 left-0 w-full h-full bg-white"
-                    style={{
-                      clipPath: 'polygon(0 100%, 50% 0, 100% 100%)'
-                    }}
-                  />
-                </motion.div>
-                
-                {/* Contenido del sobre */}
-                <div className="absolute inset-0 flex items-center justify-center flex-col space-y-4">
-                  <Mail className="w-16 h-16 sm:w-20 sm:h-20 text-friendship animate-float" />
+                />
+
+                {/* Corazón central */}
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <div className="w-12 h-12 bg-[#ea384c] rounded-full transform rotate-45">
+                    <div className="w-full h-full relative">
+                      <div className="absolute w-full h-full bg-[#ea384c] rounded-full -left-1/2"></div>
+                      <div className="absolute w-full h-full bg-[#ea384c] rounded-full -top-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Texto "Toca para abrir" */}
+                <div className="absolute bottom-4 left-0 right-0 text-center z-20">
                   <p className="text-friendship-dark text-lg sm:text-xl font-medium">
                     Toca para abrir
                   </p>
                 </div>
 
-                {/* Sombras laterales para efecto 3D */}
-                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-transparent to-gray-100" />
-                <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-r from-transparent to-gray-100" />
-                <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-l from-transparent to-gray-100" />
+                {/* Sombras suaves */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.05)]" />
               </div>
             </div>
           </motion.div>
